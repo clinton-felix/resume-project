@@ -1,0 +1,111 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clinton Felix</title>
+        <link href = "{% static '/css/main.css' %}" rel="stylesheet" type= "text/css">
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        
+    </head>
+    <body>
+        <br>
+         <div class="container"> <!--Container opens-->
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card card-body h-100 border-info" id="profile-wrapper"> 
+                        <img id="profile-pic" src= "{% static 'images/profile.jpg' %}" alt="profile-pic">
+                        <br>
+                        <h4>Hi, I am Clinton!</h4>
+                        <p>I am a Developer and I love collaboarating!</p>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="card card-body h-100 border-info"> 
+                        <h4>My Journey and Experience as a Developer </h4>
+                        <br>
+                        <p>I wrote my first Hello World Code in 2019, just a few months after I finished my first Degree
+                            It was a great Experience because I now understood how the internet worls, at least the static
+                            web. A few short months Later, I began to learn other much more intriguing aspects of programming.
+                            It was a passion; and I was ready to stretch it to the limits!
+                        </p>
+
+                        <p>
+                            Before I knew it, a few short months afterwards, I had mastered the basics and was now writting
+                            server and client side codes. My Newbie self had made a lot of progress! I ventured into other aspects
+                            of coding, including a bit of php, react.js, python, Django and ultimately Solidity; for writing 
+                            Blockchain(ERC20) based applications and Ethereun Smartcontracts!
+                        </p>
+
+                        <p>
+                            I still have so much to learn, but I am confident that I will be a great addition to your team and also 
+                            help your organization position itself for relevance with your both existing infrastructure and future 
+                            infrastructure like Blockchain! Talk Soon!
+                        </p>
+
+                        <ul class="social-links">
+                            <li><img class="social" src="{% static 'images/fb.png' %}"></li>
+                            <li><img class="social" src="{% static 'images/instagram.png' %}"></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-12">
+                    <div class="card card-body h-100"> 
+                        <h4>
+                            Past Working Experience
+                        </h4>
+
+                        <p>
+                            I have had the honor of working on the following projects
+                        </p>
+
+                        <ul>
+                            <li>
+                                <a href="#">Supply Chain Solution using Blockchain</a>
+                            </li>
+                            <li>
+                                <a href="#"> Market Place Solution</a>
+                            </li>
+                            <li>
+                                <a href="#"> Payment Gateway Integrations</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12">
+                    <div class="card card-body h-100"> 
+                        <h4>Contact Me</h4>
+                        <p>Would You Like to Talk about your project? Kindly fill and submit the form below:</p>
+
+                        <form action="" method="post"> 
+                            {%csrf_token%}
+                             {{form}}
+                             <input type="submit">
+                        </form>
+                        <br>
+
+                        <h4>All Contacts</h4> 
+                        <ul>
+                        {% for customer in Customers %}
+                        <li>{{customer.first_name}} {{customer.last_name}}</li>
+
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+        </div>   
+    </body>
+</html>
